@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block content %}
+<p class="eyebrow">BATCH PROCESSING</p><h1>Bulk employee analysis</h1><p class="lead">Upload a CSV containing employee rows. Missing model input columns are filled with training-set defaults; include the original dataset columns for the most meaningful results.</p>
+<form method="post" enctype="multipart/form-data" class="card form"><label>CSV dataset<input type="file" name="file" accept=".csv" required></label><button class="btn" type="submit">Predict and download CSV →</button></form>
+<div class="disclaimer">The result file includes an attrition probability, predicted class and low/medium/high risk band. Protect employee data and use only authorized, appropriately governed records.</div>{% endblock %}

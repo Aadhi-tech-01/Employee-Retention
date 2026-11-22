@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block content %}
+<p class="eyebrow">PREDICTION RESULT</p><h1>Risk estimate</h1>
+<div class="card result"><div><small>Estimated probability of attrition</small><div class="big">{{ probability }}%</div><span class="risk {{ risk|lower }}">{{ risk }} risk band</span></div><div class="gauge"><div style="width:{{ probability }}%"></div></div></div>
+<p class="disclaimer">This is a model estimate, not a fact about the employee. Discuss concerns privately and respectfully; do not use this score alone for hiring, promotion, discipline or termination decisions.</p>
+<section class="section-head"><div><p class="eyebrow">HUMAN-CENTERED ACTIONS</p><h2>Suggested retention conversations</h2></div></section>
+<div class="grid">{% for title,desc in tips %}<div class="card tip"><b>{{ title }}</b><p>{{ desc }}</p></div>{% endfor %}</div>
+<a class="btn secondary" href="/predict">← New prediction</a>{% endblock %}

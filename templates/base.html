@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Employee Retention AI</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><header class="top"><a class="brand" href="/"> Employee Retention <span>AI</span></a><nav><a href="/">Overview</a><a href="/predict">Predict</a><a href="/bulk">Bulk analysis</a></nav></header>
+<main class="container">{% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}{% for category,message in messages %}<div class="notice">{{ message }}</div>{% endfor %}{% endif %}{% endwith %}{% block content %}{% endblock %}</main>
+</body></html>

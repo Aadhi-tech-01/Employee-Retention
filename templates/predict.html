@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block content %}
+<p class="eyebrow">INDIVIDUAL ASSESSMENT</p><h1>Employee risk estimate</h1><p class="lead">Enter the available employee indicators. Unspecified model features are filled with training-data defaults.</p>
+<form method="post" class="card form">
+<div class="form-grid">{% for name,kind,options in fields %}
+<label>{{ name.replace('_',' ') }}
+{% if kind == 'select' %}<select name="{{ name }}">{% for option in options %}<option value="{{ option }}" {% if defaults.get(name)==option %}selected{% endif %}>{{ option }}</option>{% endfor %}</select>
+{% else %}<input type="number" step="any" name="{{ name }}" value="{{ defaults.get(name,0) }}" required>{% endif %}
+</label>{% endfor %}</div><button class="btn" type="submit">Estimate attrition risk →</button>
+</form>{% endblock %}
